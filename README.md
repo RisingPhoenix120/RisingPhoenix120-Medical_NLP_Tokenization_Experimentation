@@ -655,29 +655,9 @@ The current chunking strategy (sentence-level, min 40 chars) was chosen as a rea
 | fig07\_tokenizer.png | PNG | Bar chart: fertility and SNOMED coverage by model |
 | fig08\_group\_avg.png | PNG | Grouped bar: General vs Medical family averages |
 
-## **B. Environment Setup**
 
-Reproduce the environment on Windows with uv:
 
-uv venv .venv
-
-.venv\\Scripts\\activate
-
-uv pip uninstall torch
-
-uv pip install torch \--index-url https://download.pytorch.org/whl/cu128
-
-uv pip install sentence-transformers transformers faiss-cpu pandas numpy matplotlib seaborn tqdm psutil
-
-python rag\_eval\_local.py
-
-Verify CUDA:
-
-python \-c "import torch; print(torch.cuda.is\_available()); print(torch.cuda.get\_device\_name(0))"
-
-*Note: Use \--index-url (not \--extra-index-url) to guarantee the cu128 wheel is selected. \--extra-index-url falls back to CPU torch from PyPI if the cu128 wheel is not found.*
-
-## **C. Tokenizer Fertility: Selected Terms**
+## **B. Tokenizer Fertility: Selected Terms**
 
 | SNOMED Term | BERT-base Tokens | PubMedBERT Tokens | Savings |
 | :---- | :---- | :---- | :---- |
@@ -691,7 +671,7 @@ python \-c "import torch; print(torch.cuda.is\_available()); print(torch.cuda.ge
 | anastomosis | 4 tokens | **1 token** | 3 tokens |
 | cholecystectomy | 5 tokens | 2 tokens | 3 tokens |
 
-## **D. Glossary**
+## **C. Glossary**
 
 | Term | Definition |
 | :---- | :---- |
