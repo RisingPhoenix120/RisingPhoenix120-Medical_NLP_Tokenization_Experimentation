@@ -1,5 +1,5 @@
   
-**MEDICAL RAG EVALUATION PIPELINE**
+# **MEDICAL RAG EVALUATION PIPELINE**
 
 **Design & Analysis Document**
 
